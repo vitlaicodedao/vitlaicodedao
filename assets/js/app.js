@@ -128,13 +128,44 @@
       const form = document.getElementsByClassName("contact-form")[0];
       $(".contact-form").on("submit", function (e) {
         e.preventDefault();
+
+        let name = document.getElementById('name').value.trim();
+        let email = document.getElementById('mail').value.trim();
+        let phone = document.getElementById('phone').value.trim();
+        let subject = document.getElementById('subject').value.trim();
+        let message = document.getElementById('detail-message').value.trim();
+
+        if (!name || !email || !phone || !subject || !message) {
+          e.preventDefault();
+          alert("All fields are required!");
+          return false;
+        }
+
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          e.preventDefault();
+          alert("Invalid email address!");
+          return false;
+        }
+
+        let phonePattern = /^[0-9]{10,15}$/;
+        if (!phonePattern.test(phone)) {
+          e.preventDefault();
+          alert("Invalid phone number!");
+          return false;
+        }
+
+        grecaptcha.enterprise.ready(async () => {
+          const token = await grecaptcha.enterprise.execute('6Lcw8PAqAAAAAHcgFBshwg5aTOf2R1t_RaSCyaXf', { action: 'LOGIN' });
+        });
+
         const data = new FormData(form);
         const action = e.target.action;
         fetch(action, {
           method: "POST",
           body: data,
         }).then(() => {
-          alert("Sent To MichaelDev! Thanks!");
+          alert("Sent To Michael Dev! Thanks!");
           window.location.reload();
         });
       });
