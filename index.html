@@ -56,9 +56,23 @@
         })();
     </script>
 
+    <style>
+        .facebook-embedded {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .facebook-embedded>div {
+            flex: 1;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v22.0&appId=1218830466911420"></script>
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader">
@@ -279,7 +293,7 @@
             <!-- Skills Area End -->
 
             <!-- clients Area Start -->
-            <!-- <section class="clients p-40" id="clients">
+            <section class="clients p-40" id="clients">
                 <div class="container">
                     <div class="heading mb-48">
                         <h3>Clients</h3>
@@ -323,11 +337,11 @@
                         </div>
                     </div>
                 </div>
-            </section> -->
+            </section>
             <!-- clients Area End -->
 
             <!-- Experience Area Start -->
-            <!-- <section class="experience p-40" id="experience">
+            <section class="experience p-40" id="experience">
                 <div class="container">
                     <div class="heading mb-48">
                         <h3 class="mb-32">Experience and Education</h3>
@@ -387,7 +401,7 @@
                         </div>
                     </div>
                 </div>
-            </section> -->
+            </section>
 
             <!-- Contact Area Start -->
             <section class="contact p-40" id="contact">
@@ -455,10 +469,30 @@
                                 <div id="message" class="alert-msg"></div>
                             </form>
                         </div>
+                        <div class="facebook-embedded">
+                            <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=61567782263161"
+                                data-tabs="timeline" data-width="" data-height="" data-small-header="true"
+                                data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
+                                <blockquote cite="https://www.facebook.com/profile.php?id=61567782263161"
+                                    class="fb-xfbml-parse-ignore"><a
+                                        href="https://www.facebook.com/profile.php?id=61567782263161">Hỗ Trợ Đồ Án</a>
+                                </blockquote>
+                            </div>
+                            <iframe
+                                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FprogramDever%2Fposts%2Fpfbid02Z26bpM7L1e5mTZRWqN7zjcdDcrRxwovW5yDtDKLPu3uwmiFaLNybw3z29xoiKJxWl&show_text=true&width=500"
+                                width="500" height="277" style="border:none;overflow:hidden" scrolling="no"
+                                frameborder="0" allowfullscreen="true"
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+                            <div class="fb-group" data-href="https://www.facebook.com/groups/1080683523491662"
+                                data-width="280" data-show-metadata="false">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
             <!-- Contact Area End -->
+
 
         </div>
         <!-- Main Content End -->
